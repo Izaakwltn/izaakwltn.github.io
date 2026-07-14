@@ -100,7 +100,24 @@ h3 { font-size: 1.05rem; margin: 0; }
 
 /* ---- Landing intro ---- */
 
+.intro-head {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
 .intro h1 { margin-bottom: 0.2rem; }
+.intro-head h1 { margin: 0 0 0.2rem; }
+.intro-head .tagline { margin: 0; }
 .intro .tagline {
   color: var(--muted);
   font-size: 1.05rem;
