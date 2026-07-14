@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Izaak Walton — CV</title>
+  <meta name="description" content="Curriculum vitae of Izaak Walton, software engineer.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Izaak Walton</a>
+      <nav class="nav">
+        <a href="index.html">About</a>
+        <a href="cv.html" class="active">CV</a>
+        <!-- Future pages — uncomment as they're built:
+        <a href="projects.html">Projects</a>
+        <a href="blog/index.html">Blog</a>
+        -->
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="cv-header">
+        <h1>Curriculum Vitae</h1>
+        <div class="cv-contact">
+          Los Angeles, CA ·
+          <a href="mailto:izaakw@protonmail.com">izaakw@protonmail.com</a> ·
+          <a href="https://github.com/Izaakwltn">github.com/Izaakwltn</a> ·
+          <a href="https://www.linkedin.com/in/izaak-walton">linkedin.com/in/izaak-walton</a>
+        </div>
+      </div>
+
+      <p class="lede">Software engineer who builds tools, compilers, and
+      infrastructure that make hard technical work easier — from compiler backends
+      that run experiments on real hardware to ML training stacks, full-stack apps,
+      test frameworks, and developer tooling.</p>
+
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="role">Software Engineer <span class="org">— Kreisleriana LLC</span></h3>
+          <span class="dates">April 2026 – Present</span>
+        </div>
+        <ul>
+          <li>Built Alkan, a self-hostable reading app for EPUBs and PDFs from self-hosted libraries: a universal SwiftUI iPhone/iPad app shipped via TestFlight, backed by a from-scratch HTTP/JSON service in Common Lisp with books stored content-addressed and deduplicated by SHA-256.</li>
+          <li>Developed an OMR that reliably reads sheet music: trained a CTC-CNN-BiGRU recognizer — fed by a synthetic-data factory that repurposes the project's music engraver for perfectly-labeled training data — that cut held-out Symbol Error Rate from ~0.55 to 0.24 and replaced a heuristic classifier producing empty output on every input.</li>
+          <li>Optimized the in-house Common Lisp autodiff/ML library's training hot path to ~3.9× faster per step (9.0s → 2.3s/sample) through profiling-driven, type-specialized fp32 kernels and tape-graph optimization, and wired cuDNN batch-norm into the autodiff tape.</li>
+          <li>Implemented three coexisting authentication modes over a single session layer — anonymous, an OIDC relying-party flow (PKCE, JWKS-validated JWTs), and local accounts with argon2 hashing and login throttling.</li>
+          <li>Provisioned a three-node NixOS homelab (Colmena, disko, nixos-anywhere) and joined it to a cloud fleet as a WireGuard hub-and-spoke member with subnet routing across a 10.0.0.0/8 supernet.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="role">Software Engineer I, II <span class="org">— HRL Laboratories</span></h3>
+          <span class="dates">March 2024 – April 2026</span>
+        </div>
+        <ul>
+          <li>Built a compiler backend in Common Lisp, Coalton, and Python that generates assembly for a QICK (Quantum Instrumentation Control Kit) FPGA, enabling scientists to run generically-defined solid-state spin-qubit experiments on real hardware via VISA/SCPI.</li>
+          <li>Implemented a compiler backend emulating hardware output to provide compile-time debugging information to experimenters, written in Common Lisp and Python.</li>
+          <li>Diagnosed and resolved time-sensitive bugs across multiple layers of a large internal software stack written primarily in Python.</li>
+          <li>Mentored an intern, setting goals, steering work, and helping them prepare for their final presentation.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="role">Maintainer, Contributor <span class="org">— Coalton Lang (Open Source)</span></h3>
+          <span class="dates">May 2023 – February 2025</span>
+        </div>
+        <ul>
+          <li>Added file and system tooling to the standard library, native stream utilities, byte-code generation, and environment-variable access replacing awkward Common Lisp interop.</li>
+          <li>Added docstring support for structs, type constructors, and class methods, improving documentation across the standard library.</li>
+          <li>Wrote benchmark and example programs, including a subset of the Gabriel Lisp benchmarks and a minimal esolang interpreter, to document the language for new developers and quantify ongoing efficiency work.</li>
+          <li>Performed code reviews, debugged and triaged issues, and supported newcomers as an active maintainer.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="role">Software Engineering Intern <span class="org">— HRL Laboratories</span></h3>
+          <span class="dates">May 2023 – March 2024</span>
+        </div>
+        <ul>
+          <li>Built a testing framework for predicting floating-point error in quantum simulation, written in Coalton, Python, and Bash.</li>
+          <li>Wrote a quantum circuit simulator in Coalton, using the language's type-class system to simulate circuits in parallel across multiple numeric types.</li>
+          <li>Developed an Emacs mode for an internal pulse specification language, added to the team's default config.</li>
+        </ul>
+      </div>
+
+      <h2>Education</h2>
+      <div class="edu-item">
+        <span class="degree">Master of Music, Violin Performance</span> — University of Denver, Denver, CO
+        <span class="dates">September 2017 – June 2019</span>
+      </div>
+      <div class="edu-item">
+        <span class="degree">Bachelor of Music, Violin Performance</span> — University of Georgia, Athens, GA
+        <span class="dates">August 2011 – May 2015</span>
+      </div>
+      <div class="edu-item">
+        <span class="degree">LPS Qubit Collaboratory's Quantum Computing Summer Short Course</span>
+        <span class="dates">2025</span>
+      </div>
+
+      <h2>Skills</h2>
+      <p class="skills-row"><span class="label">Languages:</span> Python, Common Lisp, Swift, Coalton, Bash</p>
+      <p class="skills-row"><span class="label">Machine learning:</span> reverse-mode autodiff, CNN/BiGRU, CTC, CUDA/cuDNN, ONNX, data augmentation</p>
+      <p class="skills-row"><span class="label">Systems &amp; tooling:</span> Compiler backends, test frameworks, simulators, performance profiling, code review, NixOS, PostgreSQL, WireGuard, continuous integration, Git</p>
+      <p class="skills-row"><span class="label">Hardware / instrumentation:</span> VISA/SCPI instrument control, QICK FPGA, hardware-in-the-loop emulation</p>
+
+      <div class="cv-actions">
+        <a class="btn" href="izaak-walton-resume.pdf">Download résumé (PDF)</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Izaak Walton</span>
+      <span>
+        <a href="https://github.com/Izaakwltn">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/izaak-walton">LinkedIn</a> ·
+        <a href="mailto:izaakw@protonmail.com">Email</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
